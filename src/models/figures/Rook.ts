@@ -10,5 +10,5 @@ export class Rook extends Figure {
         super(color, cell);
         this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
         this.name = FigureNames.ROOK;
-}
+    }
 }
