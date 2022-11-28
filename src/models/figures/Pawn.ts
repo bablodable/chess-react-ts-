@@ -3,7 +3,6 @@ import { Colors } from "../Colors";
 import { Figure, FigureNames } from "./Figure";
 import blackLogo from '../../assets/black-pawn.png'
 import whiteLogo from '../../assets/white-pawn.png'
-import { threadId } from "worker_threads";
 
 export class Pawn extends Figure {
 
@@ -23,7 +22,7 @@ canMove(target: Cell): boolean {
 
     if ((target.y === this.cell.y + direction || this.isFirstStep
         && (target.y === this.cell.y + firstStepDirection))
-        && target.x === this.cell.x
+        && (target.x === this.cell.x)
         && this.cell.board.getCell(target.x, target.y).isEmpty()) {
             return true;
         }
